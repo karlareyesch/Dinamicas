@@ -3,4 +3,4 @@
 
 Este proyecto es el frontend del sistema de gestión de Dinámicas Matrimoniales  
 
-(Apenas estamos en las fases iniciales de desarrollo del proyecto.) 
+(Apenas estamos en la fase inicial de desarrollo de este proyecto.) 
