@@ -1,0 +1,136 @@
+
+.clickable {
+   cursor: pointer;
+}
+
+.thumbnail {
+   border-radius: 100%;
+}
+
+.google-icon {
+   color: #DD4B39;
+}
+
+.twitter-icon {
+   color: #55ACEE;
+}
+
+.facebook-icon {
+   color:#3B5998;
+   
+}
+
+.app-content {
+  padding: 20px;
+}
+
+.app-content md-card {
+  margin: 20px;
+}
+
+.app-sidenav {
+  padding: 10px;
+ width: 200px;
+}
+
+.app-sidenav-opened{
+  display: float;
+   height: 100%;
+   
+}
+
+.app-content md-checkbox {
+  margin: 10px;
+}
+
+.app-toolbar-filler {
+  flex: 1 1 auto;
+}
+
+.app-toolbar-menu {
+  padding: 0 14px 0 14px;
+  color: white;
+}
+
+.app-icon-button {
+  box-shadow: none;
+  user-select: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  filter: none;
+  font-weight: normal;
+  height: auto;
+  line-height: inherit;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+}
+
+.app-action {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.app-spinner {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+}
+
+.app-input-icon {
+  font-size: 16px;
+}
+
+.app-list {
+  border: 1px solid rgba(128,126,126,0.38);
+ 
+  width: 350px;
+  margin: 20px;
+}
+
+.app-progress {
+  margin: 20px;
+}
+
+
+.secondary {
+  color: rgba(0,0,0,0.54);
+}
+
+
+
+[md-icon-toolbar] {
+  position: absolute;
+  right: 1%;
+  top: 22px;
+  z-index: 1;
+
+  border: 0;
+ 
+}
+
+ md-card {
+      margin: 0 16px 16px 0;
+      width: 350px;
+    }
+    
+    .card-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+ md-grid-figure {
+    display: block;
+ }   
+
+ .wrapper{
+   
+     
+    overflow-x:initial;
+    overflow-y: init;
+}

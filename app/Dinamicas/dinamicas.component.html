@@ -1,0 +1,79 @@
+<table style="width:100%">
+  <tr>
+    <th>Catalogo de Dinamicas</th>
+    <th>Detalle</th>
+  </tr>
+  <tr>
+    <td>     
+      <md-list>
+        <md-list-item   *ngFor="let dinamica of dinamicas">   
+           <md-icon md-list-avatar class=clickable >date_range</md-icon>   
+              <h4 md-line >Dinamica - {{dinamica.dinamicaId}}</h4>
+              <p md-line class="demo-2"> Del {{dinamica.fechaInicio |date: 'dd'}} Al {{dinamica.fechaFinal | date: 'dd MMM y'}} </p>
+        </md-list-item>
+        <!-- <md-divider></md-divider> -->   
+      </md-list>      
+    </td>
+    <td>
+  
+      <div >
+      <md-card>      
+        <md-card-title>Login</md-card-title>
+           <md-card-content>
+              <form [formGroup]="dinamicasForm" (ngSubmit)="onSubmit()" >
+              
+
+<md-input class="demo-full-width" placeholder="ID (disabled)" disabled value="Id">
+      </md-input>
+ 
+      <table style="width: 100%" cellspacing="0"><tr>
+        <td><md-input placeholder="Numero De Dinamica" style="width: 100%"></md-input></td>        
+      </tr></table>
+      <p>
+        <md-input type="date" class="demo-full-width" placeholder="Fecha Inicial" value="new Date()"></md-input>
+        <md-input type="date" class="demo-full-width" placeholder="Fecha Final"></md-input>
+      </p>
+      <table style="width: 100%" cellspacing="0"><tr>
+        <td><md-input class="demo-full-width" placeholder="City"></md-input></td>
+        <td><md-input class="demo-full-width" placeholder="State"></md-input></td>
+        <td><md-input #postalCode class="demo-full-width" maxLength="5"
+                      placeholder="Postal Code"
+                      value="94043">
+          <md-hint align="end">{{postalCode.characterCount}} / 5</md-hint>
+        </md-input></td>
+
+
+
+
+      </tr></table>
+
+
+
+<div>
+    <label>Dinamicas</label><br>
+    <select   size="5" name="Dinamicas" class='clickable'>
+        <option *ngFor="let dinamica of dinamicas" [value]="dinamica.id">
+             
+             Dinamica Matrimonial - # {{dinamica.dinamicaId }} <br>
+             (Del {{dinamica.fechaInicio |date: 'dd'}} Al {{dinamica.fechaFinal | date: 'dd MMM y'}})  
+        </option>
+    </select>
+</div>
+
+
+
+
+             </form>
+           </md-card-content>
+       </md-card>
+     </div>
+
+ 
+  
+    
+    </td>
+  </tr> 
+</table> 
+
+
+
