@@ -63,7 +63,6 @@ import {DinamicasService} from './Dinamicas/dinamicas.service';
     MdMenuModule.forRoot(),        
     MdSliderModule.forRoot(),
     MdSlideToggleModule.forRoot(),
-    //MaterialModule,   
       ],
   
   declarations: [
@@ -77,9 +76,9 @@ import {DinamicasService} from './Dinamicas/dinamicas.service';
   bootstrap: [
     AppComponent,
   ],
-  //providers: [    
-  //  provideRouter(RoutesAppRoutes),ParejasService,DinamicasService
-//  ]
+  providers: [    
+    ParejasService,DinamicasService
+  ]
 })
 export class AppModule {}
 
