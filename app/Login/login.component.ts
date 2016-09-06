@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FormControl,FormBuilder,FormGroup, Validators } from '@angular/forms';
 
-import { ROUTER_DIRECTIVES } from '@angular/router';
+
 
 import {Usuario} from '../Clases/usuario';
 
@@ -9,7 +9,7 @@ import {Usuario} from '../Clases/usuario';
 selector: 'login-form',
 templateUrl: '/app/Login/login.component.html',
 
-directives: [ROUTER_DIRECTIVES],
+
 })
 
 export class LoginComponent  {
