@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {AppComponent }  from './app.component';
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpModule,HTTP_PROVIDERS} from '@angular/http';
+import {HttpModule} from '@angular/http';
 import {FormsModule,FormControl,FormBuilder,FormGroup,Validators} from '@angular/forms';
-import {Routes,RouterModule,provideRouter} from '@angular/router';
+import {Routes,RouterModule} from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import {Http} from '@angular/http';
 //import {MaterialModule} from './MaterialAll/all';
@@ -43,26 +43,26 @@ import {DinamicasService} from './Dinamicas/dinamicas.service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,  
-    RouterModule,
-    MdButtonToggleModule,
-    MdButtonModule,
-    MdCheckboxModule,
-    MdRadioModule,    
-    MdSidenavModule,
-    MdListModule,   
-    MdGridListModule,
-    MdCardModule,
-    MdCoreModule,
-    MdIconModule,
-    MdProgressCircleModule,
-    MdProgressBarModule,
-    MdInputModule,
-    MdTabsModule,
-    MdToolbarModule,
-    MdTooltipModule,
-    MdMenuModule,        
-    MdSliderModule,
-    MdSlideToggleModule,
+    RouterModule.forRoot(RoutesAppRoutes),
+    MdButtonToggleModule.forRoot(),
+    MdButtonModule.forRoot(),
+    MdCheckboxModule.forRoot(),
+    MdRadioModule.forRoot(),    
+    MdSidenavModule.forRoot(),
+    MdListModule.forRoot(),   
+    MdGridListModule.forRoot(),
+    MdCardModule.forRoot(),
+    MdCoreModule.forRoot(),
+    MdIconModule.forRoot(),
+    MdProgressCircleModule.forRoot(),
+    MdProgressBarModule.forRoot(),
+    MdInputModule.forRoot(),
+    MdTabsModule.forRoot(),
+    MdToolbarModule.forRoot(),
+    MdTooltipModule.forRoot(),
+    MdMenuModule.forRoot(),        
+    MdSliderModule.forRoot(),
+    MdSlideToggleModule.forRoot(),
     //MaterialModule,   
       ],
   
@@ -77,9 +77,9 @@ import {DinamicasService} from './Dinamicas/dinamicas.service';
   bootstrap: [
     AppComponent,
   ],
-  providers: [    
-    provideRouter(RoutesAppRoutes),ParejasService,DinamicasService
-  ]
+  //providers: [    
+  //  provideRouter(RoutesAppRoutes),ParejasService,DinamicasService
+//  ]
 })
 export class AppModule {}
 
