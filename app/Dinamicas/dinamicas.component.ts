@@ -1,8 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import { FormControl,FormBuilder,FormGroup, Validators } from '@angular/forms';
-
-
-
 import {Usuario} from '../Clases/usuario';
 import {Pareja} from '../Clases/pareja';
 import {DinamicasService} from './dinamicas.service';

@@ -36,6 +36,7 @@ import {ParejasDetalleComponent} from './parejadetalle.component';
 import {ParejasListComponent} from './equipointernolista.component';
 import {ParejasService} from './equipointerno.service';
 import {DinamicasService} from './Dinamicas/dinamicas.service';
+import {LoginService} from './Login/login.service';
 
 @NgModule({
   imports: [
@@ -77,7 +78,7 @@ import {DinamicasService} from './Dinamicas/dinamicas.service';
     AppComponent,
   ],
   providers: [    
-    ParejasService,DinamicasService
+    ParejasService,DinamicasService,LoginService
   ]
 })
 export class AppModule {}

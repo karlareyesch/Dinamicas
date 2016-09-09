@@ -3,5 +3,5 @@ export class ParejaDinamica {
   id: number;
   parejaId: number;
   dinamicaId: number;
-  registrado: number; 
+  registrado: number;
 }
