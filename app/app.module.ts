@@ -28,14 +28,15 @@ import {MdTooltipModule} from '@angular2-material/tooltip';
 import {MdMenuModule} from '@angular2-material/menu';
 import {MdSlideToggleModule} from '@angular2-material/slide-toggle';
 
-import {HomeComponent} from './Home/home.component';
+import {HomeComponent} from './home/home.component';
 import {RoutesAppRoutes} from './routesApp.routes';
-import {DinamicasComponent} from './Dinamicas/dinamicas.component';
-import {LoginComponent} from './Login/login.component';
+import {DinamicasComponent} from './dinamicas/dinamicas.component';
+import {LoginComponent} from './login/login.component';
 import {ParejasDetalleComponent} from './parejadetalle.component';
 import {ParejasListComponent} from './equipointernolista.component';
 import {ParejasService} from './equipointerno.service';
-import {DinamicasService} from './Dinamicas/dinamicas.service';
+import {DinamicasService} from './dinamicas/dinamicas.service';
+import {LoginService} from './login/login.service';
 
 @NgModule({
   imports: [
@@ -77,7 +78,7 @@ import {DinamicasService} from './Dinamicas/dinamicas.service';
     AppComponent,
   ],
   providers: [    
-    ParejasService,DinamicasService
+    ParejasService,DinamicasService,LoginService
   ]
 })
 export class AppModule {}
