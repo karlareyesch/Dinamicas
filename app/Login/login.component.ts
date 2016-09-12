@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {FormControl,FormBuilder,FormGroup, Validators } from '@angular/forms';
-import {LoginService} from '../Login/login.service';
+import {LoginService} from '../login/login.service';
 
-import {Usuario} from '../Clases/usuario';
+import {Usuario} from '../clases/usuario';
 
 @Component({
 selector: 'login-form',
