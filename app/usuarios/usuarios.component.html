@@ -1,0 +1,28 @@
+<div align="center">
+    <h1>Listado de usuarios</h1>
+</div>
+
+<md-list>
+  <md-list-item *ngFor="let message of messages">
+    <img md-list-avatar src="..." alt="...">
+    <h3 md-line> {{message.from}} </h3>
+    <p md-line>
+      <span> {{message.subject}} </span>
+      <span class="demo-2"> -- {{message.message}} </span>
+    </p>
+  </md-list-item>
+</md-list>
+
+
+<div class="col-md-6 col-md-offset-3">    
+    <p>Ha iniciado Sesion</p>
+    <div>        
+        <ul>
+           <!-- <li *ngFor="let usuario of usuarios"> **-->            
+            <li *ngFor="let usuario of usuarios">
+            <span class="badge">Usuario Id: {{usuario.usuarioId}} - Usuario: {{usuario.usuario}} - Password {{usuario.password}} - Foto {{usuario.foto}}</span>            
+        </li>
+        </ul>
+    </div>
+    <p><a [routerLink]="['/login']">Logout</a></p>
+</div>

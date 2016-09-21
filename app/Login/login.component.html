@@ -3,7 +3,7 @@
      <md-card-title>Login</md-card-title>
   <md-card-content>  
           <img src="http://placehold.it/120x120">     
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+        <form [formGroup]="loginForm" (ngSubmit)="login()" >
             <br><p>
                 <md-input type="text" formControlName="username" placeholder="Usuario">
                     <span md-prefix>
@@ -23,11 +23,8 @@
                 <button  type="submit" md-raised-button color="accent" [disabled]="!loginForm.valid" >Iniciar Sesion</button>
                           
                 <br><br> <a class="clickable">He Olvidado Mi Contraseña</a><br><br> 
-                     
-                <div class="alert alert-danger" *ngIf="alerta">
-                      Usuario y/o Contraseña incorrectos 
-                 </div>
-            
+                    
+                <div *ngIf="error" class="alert alert-danger">{{error}}</div>
             </md-card-actions>
        </form>
     </md-card-content>
