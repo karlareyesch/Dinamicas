@@ -1,5 +1,5 @@
-import { ParejasListComponent } from './equipointernolista.component';
-import { ParejasDetalleComponent } from './parejadetalle.component';
+import { ParejasListComponent } from './equipo-interno/equipointernolista.component';
+import { ParejasDetalleComponent } from './parejas/parejadetalle.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { DinamicasComponent } from './dinamicas/dinamicas.component';

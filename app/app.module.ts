@@ -34,9 +34,9 @@ import {RoutesAppRoutes} from './routesApp.routes';
 import {DinamicasComponent} from './dinamicas/dinamicas.component';
 import {LoginComponent} from './login/login.component';
 import {UsuariosComponent} from './usuarios/usuarios.component';
-import {ParejasDetalleComponent} from './parejadetalle.component';
-import {ParejasListComponent} from './equipointernolista.component';
-import {ParejasService} from './equipointerno.service';
+import {ParejasDetalleComponent} from './parejas/parejadetalle.component';
+import {ParejasListComponent} from './equipo-interno/equipointernolista.component';
+import {ParejasService} from './equipo-interno/equipointerno.service';
 import {DinamicasService} from './dinamicas/dinamicas.service';
 import {LoginService} from './login/login.service';
 import {AuthenticationService} from './login/authentication.service'
