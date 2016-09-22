@@ -1,7 +1,7 @@
 # Dinámicas
 ## Sistema de gestión para Dinámicas Matrimoniales
-dev:[![Build Status(dev)](https://travis-ci.org/muriarte/Dinamicas.svg?branch=dev)](https://travis-ci.org/muriarte/Dinamicas)
-production:[![Build Status(master)](https://travis-ci.org/muriarte/Dinamicas.svg?branch=master)](https://travis-ci.org/muriarte/Dinamicas)  
+(dev / production): ( [![Build Status(dev)](https://travis-ci.org/muriarte/Dinamicas.svg?branch=dev)](https://travis-ci.org/muriarte/Dinamicas)
+ / [![Build Status(master)](https://travis-ci.org/muriarte/Dinamicas.svg?branch=master)](https://travis-ci.org/muriarte/Dinamicas) )  
 
 Este proyecto es el frontend del sistema de gestión de Dinámicas Matrimoniales  
 
