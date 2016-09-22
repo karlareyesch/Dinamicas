@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
-import {ROUTER_DIRECTIVES, Router} from '@angular/router';
+
 
 @Component({
     selector: 'navbartop',
     templateUrl: './app/navbartop.component.html',
     styleUrls:['./assets/stylesheets/styles.css'],
     
-    directives: [ROUTER_DIRECTIVES]
+    
 })
 
 

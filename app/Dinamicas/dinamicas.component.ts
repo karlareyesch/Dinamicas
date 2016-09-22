@@ -1,24 +1,20 @@
 import {Component, OnInit} from '@angular/core';
-import {REACTIVE_FORM_DIRECTIVES, FormControl,FormBuilder,FormGroup, Validators } from '@angular/forms';
-
-import { ROUTER_DIRECTIVES } from '@angular/router';
-
-import {Usuario} from '../Clases/usuario';
-import {Pareja} from '../Clases/pareja';
+import { FormControl,FormBuilder,FormGroup, Validators } from '@angular/forms';
+import {Usuario} from '../clases/usuario';
+import {Pareja} from '../clases/pareja';
 import {DinamicasService} from './dinamicas.service';
-import {CatalogoDinamica} from '../Clases/catalogoDinamica';
+import {Dinamicas} from '../clases/dinamicas';
 
 @Component({
 selector: 'dinamicas-form',
 templateUrl: '/app/Dinamicas/dinamicas.component.html',
-directives: [
-             ROUTER_DIRECTIVES,],
+
 })
 
 export class DinamicasComponent implements OnInit {
 
   dinamicasForm: FormGroup;
-  dinamicas: CatalogoDinamica[];
+  dinamicas: Dinamicas[];
 
   constructor(fb: FormBuilder,private dinamicasService: DinamicasService) {
     this.dinamicasForm = fb.group({

@@ -1,11 +1,12 @@
 import {NgModule} from '@angular/core';
 import {AppComponent }  from './app.component';
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpModule,HTTP_PROVIDERS} from '@angular/http';
+import {HttpModule} from '@angular/http';
 import {FormsModule,FormControl,FormBuilder,FormGroup,Validators} from '@angular/forms';
-import {Routes,RouterModule,provideRouter} from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
-import {Http} from '@angular/http';
+import {Routes,RouterModule} from '@angular/router';
+import {ReactiveFormsModule } from '@angular/forms';
+import {Http,Headers} from '@angular/http';
+
 //import {MaterialModule} from './MaterialAll/all';
 
 import {MdButtonToggleModule} from '@angular2-material/button-toggle';
@@ -28,14 +29,25 @@ import {MdTooltipModule} from '@angular2-material/tooltip';
 import {MdMenuModule} from '@angular2-material/menu';
 import {MdSlideToggleModule} from '@angular2-material/slide-toggle';
 
-import {HomeComponent} from './Home/home.component';
+import {HomeComponent} from './home/home.component';
 import {RoutesAppRoutes} from './routesApp.routes';
-import {DinamicasComponent} from './Dinamicas/dinamicas.component';
-import {LoginComponent} from './Login/login.component';
+import {DinamicasComponent} from './dinamicas/dinamicas.component';
+import {LoginComponent} from './login/login.component';
+import {UsuariosComponent} from './usuarios/usuarios.component';
 import {ParejasDetalleComponent} from './parejadetalle.component';
 import {ParejasListComponent} from './equipointernolista.component';
 import {ParejasService} from './equipointerno.service';
-import {DinamicasService} from './Dinamicas/dinamicas.service';
+import {DinamicasService} from './dinamicas/dinamicas.service';
+import {LoginService} from './login/login.service';
+import {AuthenticationService} from './login/authentication.service'
+import {AuthGuard} from './login/auth.guard'
+
+import { fakeBackendProvider } from './login/fake-backend';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+ 
+
+
 
 @NgModule({
   imports: [
@@ -43,27 +55,26 @@ import {DinamicasService} from './Dinamicas/dinamicas.service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,  
-    RouterModule,
-    MdButtonToggleModule,
-    MdButtonModule,
-    MdCheckboxModule,
-    MdRadioModule,    
-    MdSidenavModule,
-    MdListModule,   
-    MdGridListModule,
-    MdCardModule,
-    MdCoreModule,
-    MdIconModule,
-    MdProgressCircleModule,
-    MdProgressBarModule,
-    MdInputModule,
-    MdTabsModule,
-    MdToolbarModule,
-    MdTooltipModule,
-    MdMenuModule,        
-    MdSliderModule,
-    MdSlideToggleModule,
-    //MaterialModule,   
+    RouterModule.forRoot(RoutesAppRoutes),
+    MdButtonToggleModule.forRoot(),
+    MdButtonModule.forRoot(),
+    MdCheckboxModule.forRoot(),
+    MdRadioModule.forRoot(),    
+    MdSidenavModule.forRoot(),
+    MdListModule.forRoot(),   
+    MdGridListModule.forRoot(),
+    MdCardModule.forRoot(),
+    MdCoreModule.forRoot(),
+    MdIconModule.forRoot(),
+    MdProgressCircleModule.forRoot(),
+    MdProgressBarModule.forRoot(),
+    MdInputModule.forRoot(),
+    MdTabsModule.forRoot(),
+    MdToolbarModule.forRoot(),
+    MdTooltipModule.forRoot(),
+    MdMenuModule.forRoot(),        
+    MdSliderModule.forRoot(),
+    MdSlideToggleModule.forRoot(),
       ],
   
   declarations: [
@@ -71,6 +82,7 @@ import {DinamicasService} from './Dinamicas/dinamicas.service';
     HomeComponent,
     DinamicasComponent,
     LoginComponent,
+    UsuariosComponent,
     ParejasDetalleComponent,
     ParejasListComponent
   ],
@@ -78,7 +90,13 @@ import {DinamicasService} from './Dinamicas/dinamicas.service';
     AppComponent,
   ],
   providers: [    
-    provideRouter(RoutesAppRoutes),ParejasService,DinamicasService
+    ParejasService,DinamicasService,LoginService, 
+    AuthenticationService ,
+    AuthGuard,   
+    // providers used to create fake backend
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions
   ]
 })
 export class AppModule {}

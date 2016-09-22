@@ -11,7 +11,7 @@
         '@angular':                   'node_modules/@angular',
         '@angular2-material':         'node_modules/@angular2-material',        
         'angular2-jwt': 'node_modules/angular2-jwt/angular2-jwt.js',  
-
+     '@angular/http/testing': 'node_modules/@angular/http/bundles/http-testing.umd.js'
         
       };
       // packages tells the System loader how to load when no filename and/or no extension
@@ -59,7 +59,7 @@
       ];
       
       materialPackages.forEach((pkg) => {
-      packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
+      packages[`@angular2-material/${pkg}`] = {format:'cjs', main: `${pkg}.umd.js`};
        });
 
       // Individual files (~300 requests):

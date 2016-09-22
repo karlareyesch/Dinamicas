@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pareja} from './clases/pareja'
 import { ParejasService }   from './equipointerno.service';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+
 
 @Component({
   selector: 'equipointerno-list',
@@ -14,7 +14,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
       </li>
     </ul>
   `,
-  directives: [ROUTER_DIRECTIVES]
+  
 })
 export class ParejasListComponent implements OnInit {
   

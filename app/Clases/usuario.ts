@@ -1,10 +1,7 @@
 
-export class Usuario {
-
-constructor (  
-public  usuarioId: number,
-public  password: string
-  //punlic foto: image 
-){}
-
+export interface Usuario {
+  usuarioId: number;
+  usuario:string;
+  password: string;
+  foto: string; 
 }
