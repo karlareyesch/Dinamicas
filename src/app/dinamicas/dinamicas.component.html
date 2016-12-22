@@ -1,0 +1,67 @@
+
+<!--
+<div class="card-container">
+    <md-card *ngFor="let dinamica of dinamicas">
+      <!--<img md-card-image [alt]="nombreFoto" src="https://assets/{{dinamicaFoto}}.png"> -->     
+<!--      <md-card-title>Dinamica - {{dinamica.dinamicaId}}</md-card-title> 
+      <md-card-content class="secondary">
+         <md-icon>date_range</md-icon>
+             Del {{dinamica.fechaInicio |date: 'dd'}} Al {{dinamica.fechaFinal | date: 'dd MMM y'}}  
+         </md-card-content>
+      <md-card-actions align="end">        
+         <button md-icon-button color="primary">
+           <md-icon class="md-24">playlist_add</md-icon>      
+        </button>
+      </md-card-actions>     
+    </md-card>
+</div>
+-->
+
+<md-card class="todoapp">
+  <md-toolbar color="primary">
+    Listado de Dinamicas
+    <button md-fab class="fab-add" (click)="todoDialog()">
+      <md-icon>add</md-icon>
+    </button>
+  </md-toolbar>
+
+
+  <md-card-content *ngIf="dinamicasList.length">
+    <md-list>
+      <md-list-item *ngFor="let dinamica of dinamicasList; let index=index">
+
+        <div class="list-item">
+          <md-checkbox color="primary" type="checkbox" [(ngModel)]="dinamica.completed">
+          </md-checkbox>
+           
+            <span [class.completed]="dinamica.completed">Dinamica # {{dinamica.dinamicaId}}       
+               <md-icon>date_range</md-icon>                 
+               Del {{dinamica.fechaInicio |date: 'dd'}} Al {{dinamica.fechaFinal | date: 'dd MMM y'}}&nbsp;&nbsp;&nbsp;   
+               En {{dinamica.lugar}}           
+            </span>         
+
+          <span>
+            <button md-mini-fab (click)="remove(index)" color="primary"
+              [disabled]="!dinamica.completed" >
+              <md-icon>delete_forever</md-icon>
+            </button>
+
+            <button md-mini-fab (click)="todoDialog(dinamica)" color="primary"
+                    [disabled]="dinamica.completed">
+              <md-icon>mode_edit</md-icon>
+            </button>
+          </span>
+        </div>
+
+      </md-list-item>
+    </md-list>
+  </md-card-content>
+</md-card>
+
+<app-dinamicas-detalle [title]="titulo"            
+            [placeholder]="'Escribe el # de dinamica matrimonial'"
+            [okText]="okButtonText"
+            [value]="fieldValue"
+            (valueEmitted)="updateTodo($event)"
+            [showPrompt]="showDialog">
+</app-dinamicas-detalle>

@@ -1,0 +1,32 @@
+<div align="center"> 
+  <md-card>      
+     <md-card-title>Login</md-card-title>
+  <md-card-content>  
+          <img src="http://placehold.it/120x120">     
+        <form [formGroup]="loginForm" (ngSubmit)="login()" >
+            <br><p>
+                <md-input type="text" formControlName="username" placeholder="Usuario">
+                    <span md-prefix>
+                        <i class="material-icons app-input-icon">account_circle</i>&nbsp;          
+                    </span>
+                </md-input>  
+            </p>               
+            <p>
+                <md-input type="password" formControlName="password" placeholder="Contraseña"><br>              
+                    <span md-prefix>
+                        <i class="material-icons app-input-icon">vpn_key</i>&nbsp;          
+                    </span>      
+                </md-input>
+            </p>
+
+            <md-card-actions align="center">
+                <button  type="submit" md-raised-button color="accent" [disabled]="!loginForm.valid" >Iniciar Sesion</button>
+                          
+                <br><br> <a class="clickable">He Olvidado Mi Contraseña</a><br><br> 
+                    
+                <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+            </md-card-actions>
+       </form>
+    </md-card-content>
+   </md-card>
+<div>
