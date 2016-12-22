@@ -1,0 +1,10 @@
+{
+  "dinamicas":[  
+  { "id": "1", "dinamicaId" : "41", "fechaInicio" : "2016-05-12T18:25:43.511Z", "fechaFinal" : "2016-05-15T18:25:43.511Z", "lugar" :"Catedral Del Espiritu Santo"},
+  { "id": "2", "dinamicaId" : "42", "fechaInicio" : "2016-06-02T18:25:43.511Z", "fechaFinal" : "2016-06-06T18:25:43.511Z", "lugar" :"Iglesia San Carmen"},
+  { "id": "3", "dinamicaId" : "43", "fechaInicio" : "2016-07-21T18:25:43.511Z", "fechaFinal" : "2016-07-23T18:25:43.511Z", "lugar" :"Iglesia San Martin de Porres"},
+  { "id": "4", "dinamicaId" : "44", "fechaInicio" : "2016-08-09T18:25:43.511Z", "fechaFinal" : "2016-08-17T18:25:43.511Z", "lugar" :"Catedral Del Espiritu Santo"},
+  { "id": "5", "dinamicaId" : "45", "fechaInicio" : "2016-09-30T18:25:43.511Z", "fechaFinal" : "2016-09-31T18:25:43.511Z", "lugar" :"Iglesia San Judas"},
+  { "id": "6", "dinamicaId" : "46", "fechaInicio" : "2016-10-23T18:25:43.511Z", "fechaFinal" : "2016-10-23T18:25:43.511Z", "lugar" :"Iglesia Sagrada Familia"}
+  ]
+}
