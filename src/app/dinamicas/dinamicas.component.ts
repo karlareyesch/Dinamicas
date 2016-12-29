@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-//import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario} from '../shared/usuario';
-//import { Pareja } from '../parejas/shared/pareja';
 import { DinamicaService } from './shared/dinamicas.service';
-
-
 import { Dinamicas } from './shared/dinamicas';
 import { DinamicasDetalleComponent } from './dinamicas-detalle/dinamicas-detalle.component';
 
@@ -15,53 +11,27 @@ import { DinamicasDetalleComponent } from './dinamicas-detalle/dinamicas-detalle
   styleUrls: ['./dinamicas.component.css'],
 })
 
-export class DinamicasComponent implements OnInit {
-  //dinamicasForm: FormGroup;
+export class DinamicasComponent implements OnInit {  
   dinamicas: Dinamicas[];
-usuarios=[];
-  constructor(private dinamicaService: DinamicaService) { }
-
-  /*
-    constructor( private dinamicaService: DinamicaService) {    
-      this.dinamicasForm = fb.group({
-        id: ['', Validators.required],
-        dinamica: ['', Validators.required],
-        finicio: ['', Validators],
-        ffinal: ['', Validators],
-        lugar: ['', Validators]
-      });
-    }
-  
-    /*onSubmit() {
-      console.log(this.dinamicasForm.value);
-    }
-    }*/
-
-  ngOnInit() {
-   // this.dinamicas = this.dinamicaService.getDinamicas();
-    this.dinamicasList = this.dinamicaService.getDinamicas();
-
-//Con Fakebackend
-/*      this.llamaUsuarios();
-      this.llamaDinamica();
-      console.log(this.dinamicasApi);
-*/
-
-  }
-
+  usuarios=[];
   showDialog: boolean = false;
-  editingTodo = null;
-  //fieldValue: string = '';
+  editingTodo = null;  
   dinamicasApi=[];
   fieldValue: Dinamicas;
   dinamicasList: any = [];
   okButtonText: string = '';
   titulo: string = '';
+  
+  constructor(private dinamicaService: DinamicaService) { }
+ 
+  ngOnInit() {
+    // this.dinamicas = this.dinamicaService.getDinamicas();    
+    this.dinamicasList = this.dinamicaService.getDinamicas();
+    } 
 
   todoDialog(todo = null) {
     this.okButtonText = 'Agregar';
-    this.titulo = 'Agregar Dinamica Matrimonial';
-    //this.fieldValue = '';
+    this.titulo = 'Agregar Dinamica Matrimonial';   
     this.fieldValue = new Dinamicas();
     this.editingTodo = todo;
     if (todo) {
@@ -110,7 +80,6 @@ usuarios=[];
                 this.usuarios = usuarios;
                 console.log(usuarios);
             });
-
   }
 
   llamaDinamica(){
