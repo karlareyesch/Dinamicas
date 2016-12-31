@@ -33,7 +33,7 @@ export class DinamicasDetalleComponent implements OnInit {
 
   valueEmitted: EventEmitter<IDinamicas> = new EventEmitter<IDinamicas>();
 
-  constructor(private fb: FormBuilder, private dinamicaService: DinamicaService) { } // se dejo libre el constructor se paso todo al init
+  constructor(private fb: FormBuilder, private dinamicaService: DinamicaService) {} // se dejo libre el constructor se paso todo al init
   
   procesar({ value, valid }: { value: IDinamicas, valid: boolean }) {
     console.log(this.dinamicasForm.value);
@@ -42,17 +42,27 @@ export class DinamicasDetalleComponent implements OnInit {
   ngOnInit() {
     this.okText = 'OK';
     this.cancelText = 'Cancelar';
-    this.myDate = new Date();
-    
+    this.myDate = new Date();    
 
     this.dinamicasForm = this.fb.group({
-      id: ['', Validators.required], //Pendiente asignar un set value para asignar valor de inputs
+      id: [{disabled : true}, Validators.required], //Pendiente asignar un set value para asignar valor de inputs
       dinamica: ['', Validators.required],
-      finicio: [this.myDate, Validators],
-      ffinal: [this.myDate, Validators],
-      lugar: ['cancelText', Validators]
+      finicio: ['', Validators],
+      ffinal: ['', Validators],
+      lugar: ['', Validators]
     });
   }
+
+  cancel (valor : any){
+     this.valueEmitted.emit(valor);
+  }
+
+ emitValue(value : Dinamicas) {
+  // value.id=1253;
+    console.log(value);
+    this.valueEmitted.emit(value);
+}
+
 
   onSubmit() {
     console.log(this.dinamicasForm.value);
@@ -67,6 +77,4 @@ export class DinamicasDetalleComponent implements OnInit {
     console.log(this.value)
     // this.valueEmitted.emit(idinamicas);   Queda listo regreso de datos en esta parte
   }
-
-
 }
