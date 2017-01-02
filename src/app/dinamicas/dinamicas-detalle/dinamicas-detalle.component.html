@@ -1,3 +1,4 @@
+<!--
 <div class="overlay" *ngIf="showPrompt">
   <md-card class="modalDialog">
     <md-toolbar color="primary">
@@ -5,7 +6,7 @@
     </md-toolbar>
     <md-card-content> <br>
       <form [formGroup]="dinamicasForm" (ngSubmit)="onSubmit()">
-        <md-input class="demo-full-width" placeholder="ID (disabled)" formControlName="id" value="94043">
+        <md-input class="demo-full-width" placeholder="ID (disabled)" formControlName="id" >
         </md-input>&nbsp;
         <md-input class="demo-full-width" placeholder="# De Dinamica" formControlName="dinamica">
         </md-input>
@@ -25,11 +26,55 @@
          </table>
 
         <md-card-actions class="center">
-          <button md-button (click)="emitValue(null)" color="primary">{{cancelText}}</button>
+          <button md-button (click)="cancelar(null)" color="primary">{{cancelText}}</button>
           <button md-raised-button type="submit" color="primary">{{okText}}</button>
-          <!-- {value.dinamicaId}} -->
+       
         </md-card-actions>
       </form>
    </md-card-content>
 </md-card>
+</div>
+
+-->
+
+
+
+<div class="overlay" *ngIf="showPrompt">
+  <md-card class="modalDialog">
+    <md-toolbar color="primary">
+      {{title}}
+    </md-toolbar>
+    <md-card-content>
+      <br><br><br>
+      <md-input class="demo-full-width" placeholder="ID"
+                [(ngModel)]="value.id" id="id"           
+                (keyup.escape)="emitValue(null)"></md-input>   &nbsp;&nbsp;             
+
+      <md-input class="demo-full-width" [placeholder]="placeholder"
+                [(ngModel)]="value.dinamicaId"  #dinamicas        
+                (keyup.escape)="emitValue(null)"></md-input>                          
+    
+      <p>
+        <md-input type="date" class="demo-full-width" placeholder="Fecha Inicial"  [value]="myDate | date:'yyyy-MM-dd'">
+        </md-input>&nbsp;&nbsp;      
+         <md-input type="date" class="demo-full-width" placeholder="Fecha Final"    [value]="myDate | date:'yyyy-MM-dd'">
+        </md-input>
+      </p> 
+
+       <table style="width: 100%" cellspacing="0">
+          <tr>
+            <td>
+              <md-input placeholder="Lugar" style="width: 80%"  [(ngModel)]="value.lugar"  id=lugar ></md-input>
+            </td>
+          </tr>
+         </table>
+ 
+    </md-card-content>
+
+
+    <md-card-actions class="center">
+      <button md-button (click)="emitValue(null)" color="primary">{{cancelText}}</button>
+      <button md-raised-button (click)="emitValue(value)" color="primary">{{okText}}</button>
+    </md-card-actions>
+  </md-card>
 </div>

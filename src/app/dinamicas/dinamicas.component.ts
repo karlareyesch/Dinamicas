@@ -47,24 +47,29 @@ export class DinamicasComponent implements OnInit {
     this.dinamicasList.splice(index, 1);
   }
 
-  updateTodo(dinamicaId) {
-    if (dinamicaId) {
-      dinamicaId = dinamicaId.trim();
+  updateTodo(dinamicas: Dinamicas) {
+    if (dinamicas != null) {
+     
+     //    this.hideDialog();
+    if (dinamicas.dinamicaId) {  
       if (this.editingTodo) {
-        this.editTodo(dinamicaId);
+        this.editTodo(dinamicas);
       } else {
-        this.addTodo(dinamicaId);
+        this.addTodo(dinamicas);
       }
     }
+  }    
+    console.log('viene nulo');
     this.hideDialog();
   }
 
-  editTodo(dinamicaId) {
-    this.editingTodo.dinamicaId = dinamicaId;
+  editTodo(dinamicas: Dinamicas) {
+    //this.editingTodo.dinamicaId = dinamicas.dinamicaId;
+    this.editingTodo.dinamicas=dinamicas;
   }
 
-  addTodo(dinamicaId) {
-    const dinamica = { dinamicaId: dinamicaId, completed: false };
+  addTodo(dinamicas: Dinamicas) {
+    const dinamica = { id: dinamicas.id, dinamicaId: dinamicas.dinamicaId, lugar: dinamicas.lugar, completed: false };
     this.dinamicasList.push(dinamica);
   }
 
@@ -74,7 +79,8 @@ export class DinamicasComponent implements OnInit {
     this.fieldValue = null; // make sure Input is always new
   }
 
-  llamaUsuarios(){
+ /*
+ llamaUsuarios(){
    this.dinamicaService.getUsuarios()
             .subscribe(usuarios => {
                 this.usuarios = usuarios;
@@ -88,6 +94,8 @@ export class DinamicasComponent implements OnInit {
          this.dinamicasApi = dinamicasApi;
          console.log(dinamicasApi);
   });}
+*/
+
 }
 
 
