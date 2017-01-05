@@ -42,7 +42,7 @@ export class DinamicasDetalleComponent implements OnInit {
   ngOnInit() {
     this.okText = 'OK';
     this.cancelText = 'Cancelar';
-    this.myDate = new Date();    
+    this.myDate = new Date('2017-01-04');    
 
     this.dinamicasForm = this.fb.group({
       id: [{disabled : true}, Validators.required], //Pendiente asignar un set value para asignar valor de inputs
@@ -59,11 +59,12 @@ export class DinamicasDetalleComponent implements OnInit {
 
  emitValue(value : Dinamicas) {
   // value.id=1253;
+   console.log(this.myDate);
     console.log(value);
     this.valueEmitted.emit(value);
 }
 
-
+/*
   onSubmit() {
     console.log(this.dinamicasForm.value);
     let idinamicas: IDinamicas = {
@@ -76,5 +77,5 @@ export class DinamicasDetalleComponent implements OnInit {
     console.log(idinamicas);
     console.log(this.value)
     // this.valueEmitted.emit(idinamicas);   Queda listo regreso de datos en esta parte
-  }
+  }*/
 }

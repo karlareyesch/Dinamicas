@@ -55,9 +55,9 @@
                 (keyup.escape)="emitValue(null)"></md-input>                          
     
       <p>
-        <md-input type="date" class="demo-full-width" placeholder="Fecha Inicial"  [value]="myDate | date:'yyyy-MM-dd'">
+        <md-input type="date" class="demo-full-width" placeholder="Fecha Inicial" [(ngModel)]= "value.fechaInicio" >
         </md-input>&nbsp;&nbsp;      
-         <md-input type="date" class="demo-full-width" placeholder="Fecha Final"    [value]="myDate | date:'yyyy-MM-dd'">
+         <md-input type="date" class="demo-full-width" placeholder="Fecha Final"   [(ngModel)]="value.fechaFinal">
         </md-input>
       </p> 
 
