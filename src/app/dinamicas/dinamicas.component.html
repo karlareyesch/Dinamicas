@@ -16,7 +16,7 @@
            
             <span [class.completed]="dinamica.completed">Dinamica # {{dinamica.dinamicaId}}       
                <md-icon>date_range</md-icon>                 
-               Del {{dinamica.fechaInicio |date: 'dd'}} Al {{dinamica.fechaFinal | date: 'dd MMM y'}}&nbsp;&nbsp;&nbsp;   
+               Del {{dinamica.fechaInicio |date: 'dd' : 'UTC'}} Al {{dinamica.fechaFinal | date: 'dd MMM y' : 'UTC'}}&nbsp;&nbsp;&nbsp;             
                En {{dinamica.lugar}}           
             </span>         
 

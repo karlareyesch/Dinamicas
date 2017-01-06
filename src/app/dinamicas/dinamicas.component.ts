@@ -69,7 +69,7 @@ export class DinamicasComponent implements OnInit {
   }
 
   addTodo(dinamicas: Dinamicas) {
-    const dinamica = { id: dinamicas.id, dinamicaId: dinamicas.dinamicaId, lugar: dinamicas.lugar, completed: false };
+    const dinamica = { id: dinamicas.id, dinamicaId: dinamicas.dinamicaId, fechaInicio: dinamicas.fechaInicio, fechaFinal: dinamicas.fechaFinal, lugar: dinamicas.lugar, completed: false };
     this.dinamicasList.push(dinamica);
   }
 
