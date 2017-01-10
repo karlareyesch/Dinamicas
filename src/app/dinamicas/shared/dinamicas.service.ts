@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Dinamicas } from './dinamicas';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs';
@@ -9,17 +9,19 @@ import {Usuario} from '../../shared/usuario';
 
 
 @Injectable()
-export class DinamicaService {
-
+export class DinamicaService implements OnInit {
+    http : Http;
+    authenticationService :AuthenticationService;
     dinamicas: Array<Dinamicas>;
     dinamica: Dinamicas;
     data;
 
-    constructor(private http: Http, private authenticationService: AuthenticationService) {
+    //constructor(private http: Http, private authenticationService: AuthenticationService) {
+      constructor(){
         this.dinamicas = [
             { id: 1, dinamicaId: 41, fechaInicio: new Date("February 4, 2016 10:13:00"), fechaFinal: new Date("February 7, 2016 10:13:00"), lugar: 'Catedral Del Espiritu Santo' },
             { id: 2, dinamicaId: 42, fechaInicio: new Date("May 7, 2016 12:13:00"), fechaFinal: new Date("May 10, 2016 10:13:00"), lugar: 'Iglesia Santo Niño' },
-            { id: 3, dinamicaId: 43, fechaInicio: new Date("June 12, 2016 04:13:00"), fechaFinal: new Date("June 15, 2016 10:13:00"), lugar: 'Iglesia San Carmen' },
+            { id: 3, dinamicaId: 43, fechaInicio: new Date("June 12, 2016 04:13:00"), fechaFinal: new Date("June 15, 2016 10:13:00"), lugar: 'Iglesia Nuestra Sra del Carmen' },
             { id: 4, dinamicaId: 44, fechaInicio: new Date("July 24, 2016 07:13:00"), fechaFinal: new Date("July 27, 2016 10:13:00"), lugar: 'Iglesia San Martin de Porres' },
             { id: 5, dinamicaId: 45, fechaInicio: new Date("September 9, 2016 08:13:00"), fechaFinal: new Date("September 13, 2016 10:13:00"), lugar: 'Iglesia San Judas' },
             { id: 6, dinamicaId: 46, fechaInicio: new Date("2016/10/26"), fechaFinal: new Date("2016/10/30"), lugar: 'Iglesia Sagrada Familia' },
@@ -30,6 +32,9 @@ export class DinamicaService {
                 id: 1, dinamicaId: 41, fechaInicio: new Date("February 4, 2016 10:13:00"), fechaFinal: new Date("February 7, 2016 10:13:00"), lugar: 'Catedral Del Espiritu Santo'                
             }
     }
+
+   ngOnInit(){
+   }
 
     getDinamicas() {
         return this.dinamicas;
