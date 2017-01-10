@@ -1,6 +1,6 @@
 # DinamicasCli
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.16.
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.16.  
 (dev / production): ( [![Build Status(dev)](https://travis-ci.org/muriarte/Dinamicas.svg?branch=dev)](https://travis-ci.org/muriarte/Dinamicas)
 / [![Build Status(master)](https://travis-ci.org/muriarte/Dinamicas.svg?branch=master)](https://travis-ci.org/muriarte/Dinamicas) )
 
