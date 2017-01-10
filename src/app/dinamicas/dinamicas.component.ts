@@ -1,74 +1,44 @@
 import { Component, OnInit } from '@angular/core';
-//import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Usuario} from '../shared/usuario';
-//import { Pareja } from '../parejas/shared/pareja';
+// import { Usuario} from '../shared/usuario';
 import { DinamicaService } from './shared/dinamicas.service';
-
-
 import { Dinamicas } from './shared/dinamicas';
-import { DinamicasDetalleComponent } from './dinamicas-detalle/dinamicas-detalle.component';
+// import { DinamicasDetalleComponent } from './dinamicas-detalle/dinamicas-detalle.component';
 
 @Component({
   selector: 'app-dinamicas',
   templateUrl: './dinamicas.component.html',
-  //styleUrls: ['../..//assets/stylesheets/styles.css']
+  // styleUrls: ['../..//assets/stylesheets/styles.css']
   styleUrls: ['./dinamicas.component.css'],
 })
 
 export class DinamicasComponent implements OnInit {
-  //dinamicasForm: FormGroup;
   dinamicas: Dinamicas[];
-usuarios=[];
-  constructor(private dinamicaService: DinamicaService) { }
-
-  /*
-    constructor( private dinamicaService: DinamicaService) {    
-      this.dinamicasForm = fb.group({
-        id: ['', Validators.required],
-        dinamica: ['', Validators.required],
-        finicio: ['', Validators],
-        ffinal: ['', Validators],
-        lugar: ['', Validators]
-      });
-    }
-  
-    /*onSubmit() {
-      console.log(this.dinamicasForm.value);
-    }
-    }*/
-
-  ngOnInit() {
-   // this.dinamicas = this.dinamicaService.getDinamicas();
-    this.dinamicasList = this.dinamicaService.getDinamicas();
-
-//Con Fakebackend
-/*      this.llamaUsuarios();
-      this.llamaDinamica();
-      console.log(this.dinamicasApi);
-*/
-
-  }
-
+  usuarios = [];
   showDialog: boolean = false;
   editingTodo = null;
-  //fieldValue: string = '';
-  dinamicasApi=[];
+  dinamicasApi = [];
   fieldValue: Dinamicas;
   dinamicasList: any = [];
   okButtonText: string = '';
   titulo: string = '';
 
+  constructor(private dinamicaService: DinamicaService) { }
+
+  ngOnInit() {
+    // this.dinamicas = this.dinamicaService.getDinamicas();
+    this.dinamicasList = this.dinamicaService.getDinamicas();
+    }
+
   todoDialog(todo = null) {
     this.okButtonText = 'Agregar';
     this.titulo = 'Agregar Dinamica Matrimonial';
-    //this.fieldValue = '';
     this.fieldValue = new Dinamicas();
     this.editingTodo = todo;
     if (todo) {
-      //this.fieldValue = todo.dinamicaId;
+      // this.fieldValue = todo.dinamicaId;
       this.fieldValue = todo;
       this.okButtonText = 'Editar';
-      this.titulo = 'Editar Dinamica Matrimonial'
+      this.titulo = 'Editar Dinamica Matrimonial';
     }
     this.showDialog = true;
   }
@@ -77,24 +47,30 @@ usuarios=[];
     this.dinamicasList.splice(index, 1);
   }
 
-  updateTodo(dinamicaId) {
-    if (dinamicaId) {
-      dinamicaId = dinamicaId.trim();
+  updateTodo(dinamicas: Dinamicas) {
+    if (dinamicas != null) {
+
+     // this.hideDialog();
+    if (dinamicas.dinamicaId) {
       if (this.editingTodo) {
-        this.editTodo(dinamicaId);
+        this.editTodo(dinamicas);
       } else {
-        this.addTodo(dinamicaId);
+        this.addTodo(dinamicas);
       }
     }
+  }
+    console.log('viene nulo');
     this.hideDialog();
   }
 
-  editTodo(dinamicaId) {
-    this.editingTodo.dinamicaId = dinamicaId;
+  editTodo(dinamicas: Dinamicas) {
+    // this.editingTodo.dinamicaId = dinamicas.dinamicaId;
+    this.editingTodo.dinamicas = dinamicas;
   }
 
-  addTodo(dinamicaId) {
-    const dinamica = { dinamicaId: dinamicaId, completed: false };
+  addTodo(dinamicas: Dinamicas) {
+    const dinamica = { id: dinamicas.id, dinamicaId: dinamicas.dinamicaId, fechaInicio: dinamicas.fechaInicio,
+                       fechaFinal: dinamicas.fechaFinal, lugar: dinamicas.lugar, completed: false };
     this.dinamicasList.push(dinamica);
   }
 
@@ -104,13 +80,13 @@ usuarios=[];
     this.fieldValue = null; // make sure Input is always new
   }
 
-  llamaUsuarios(){
+ /*
+ llamaUsuarios(){
    this.dinamicaService.getUsuarios()
             .subscribe(usuarios => {
                 this.usuarios = usuarios;
                 console.log(usuarios);
             });
-
   }
 
   llamaDinamica(){
@@ -119,6 +95,8 @@ usuarios=[];
          this.dinamicasApi = dinamicasApi;
          console.log(dinamicasApi);
   });}
+*/
+
 }
 
 

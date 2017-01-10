@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+// import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsuarioLoginService } from '..//../shared/usuario-login.service';
+// import { UsuarioLoginService } from '..//../shared/usuario-login.service';
 import { AuthenticationService} from '../../shared/authentication.service';
 import { Usuario} from '../../shared/usuario';
 
@@ -13,14 +14,11 @@ import { Usuario} from '../../shared/usuario';
 export class UsuarioLoginComponent implements OnInit {
     alerta: boolean = false;
     loginForm: FormGroup;
-    usuario : Usuario ;
-      
-
+    usuario: Usuario ;
     model: any = {};
     loading = false;
     error = '';
 
-    
     constructor(
             private router: Router,
             private authenticationService: AuthenticationService,
@@ -28,14 +26,13 @@ export class UsuarioLoginComponent implements OnInit {
         this.loginForm = lf.group({
             username: ['', Validators.required],
             password: ['', Validators.required]
-        });          
+        });
 }
 
-   
+
     ngOnInit() {
         // reset login status
         this.authenticationService.logout();
-        
     }
 
     login() {
@@ -44,7 +41,7 @@ export class UsuarioLoginComponent implements OnInit {
         this.authenticationService.login(this.loginForm.value.username, this.loginForm.value.password)
             .subscribe(result => {
                 if (result === true) {
-                    // login successful                  
+                    // login successful
                    // this.router.navigate(['/usuarios']);
                 } else {
                     // login failed
