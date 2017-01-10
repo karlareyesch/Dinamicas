@@ -1,5 +1,5 @@
 import { Pareja } from './pareja';
-import { TestBed, async } from '@angular/core/testing';
+// import { TestBed, async } from '@angular/core/testing';
 import { ParejaService } from './pareja.service';
 
 
@@ -20,7 +20,7 @@ describe('ParejaService Tests', () => {
     beforeEach(() => {
         service = new ParejaService();
     });
-    
+
     it('Debe existir funcion getPareja', function () {
         expect(service.getPareja).toBeDefined();
     });

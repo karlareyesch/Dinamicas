@@ -31,8 +31,7 @@ export class ParejaService {
       }
     ];
 
-    this.pareja =
-      {
+    this.pareja = {
         id: 1, nombrePareja: 'Los Hernandez', nombresEsposa: 'martha', nombresEsposo: 'martin',
         apellidosEsposa: '', apellidosEsposo: '', aliasEsposa: '', aliasEsposo: '',
         numeroHijos: 0, numeroNietos: 0, estanciaHijos: '', pago: 0, registrado: 0,
@@ -45,6 +44,6 @@ export class ParejaService {
   }
 
   getPareja(id) {
-    return this.parejas.find(pareja => pareja.id == id);
+    return this.parejas.find(pareja => pareja.id === id);
   }
 }

@@ -1,5 +1,5 @@
 import { Dinamicas } from './dinamicas';
-import { TestBed, async } from '@angular/core/testing';
+// import { TestBed, async } from '@angular/core/testing';
 import { DinamicaService } from './dinamicas.service';
 
 
@@ -11,6 +11,7 @@ describe('Clase Dinamicas tests', () => {
     });
     it('La Clase Dinamicas debe ser valida', () => {
         expect(dinamica).not.toBeNull();
+    });
  });
 
 describe('DinamicaService Tests', () => {

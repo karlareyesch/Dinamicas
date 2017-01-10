@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import { Component } from '@angular/core';
-import { AppComponent } from './app.component';/*
+import { AppComponent } from './app.component'; /*
 import { RouterLinkStubDirective }   from '../testing';
 import { RouterOutletStubComponent } from '../testing';
 
