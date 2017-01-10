@@ -1,7 +1,4 @@
-//Clase Pareja 
-//export interface Pareja {
-  
-  export class Pareja {
+export class Pareja {
   id: number;
   nombrePareja: string;
   nombresEsposa: string;
@@ -16,6 +13,6 @@
   pago: number;
   registrado: number;
  // fechaAlta: Date;
-  //fechaCasados: Date;
-  equipoInterno: number;  
+ // fechaCasados: Date;
+  equipoInterno: number;
 }

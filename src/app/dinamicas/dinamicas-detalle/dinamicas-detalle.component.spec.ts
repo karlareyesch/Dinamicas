@@ -9,7 +9,7 @@ describe('Component: DinamicasDetalle', () => {
   let fb:FormBuilder;
   let dinamicasServide: DinamicaService;
   it('should create an instance', () => {
-    let component = new DinamicasDetalleComponent(fb,dinamicasServide);
+    let component = new DinamicasDetalleComponent(fb, dinamicasServide);
     expect(component).toBeTruthy();
   });
 });
