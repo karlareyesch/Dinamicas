@@ -20,7 +20,7 @@ export class DinamicasComponent implements OnInit {
   fieldValue: Dinamicas;
   dinamicasList: any = [];
   okButtonText: string = '';
-  titulo: string = '';
+  title: string = '';
 
   constructor(private dinamicaService: DinamicaService) { }
 
@@ -31,14 +31,14 @@ export class DinamicasComponent implements OnInit {
 
   todoDialog(todo = null) {
     this.okButtonText = 'Agregar';
-    this.titulo = 'Agregar Dinamica Matrimonial';
+    this.title = 'Agregar Dinamica Matrimonial';
     this.fieldValue = new Dinamicas();
     this.editingTodo = todo;
     if (todo) {
       // this.fieldValue = todo.dinamicaId;
       this.fieldValue = todo;
       this.okButtonText = 'Editar';
-      this.titulo = 'Editar Dinamica Matrimonial';
+      this.title = 'Editar Dinamica Matrimonial';
     }
     this.showDialog = true;
   }

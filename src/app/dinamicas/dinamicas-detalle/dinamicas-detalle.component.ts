@@ -15,8 +15,6 @@ interface IDinamicas {
 @Component({
   selector: 'app-dinamicas-detalle',
   templateUrl: './dinamicas-detalle.component.html',
-   inputs: ['value', 'showPrompt', 'placeholder', 'title', 'okText', 'cancelText'],
-   outputs: ['valueEmitted'],
   styleUrls: ['./dinamicas-detalle.component.css']
 })
 
@@ -24,19 +22,13 @@ export class DinamicasDetalleComponent implements OnInit {
   dinamicasForm: FormGroup;
   dinamicas: Dinamicas[];
   myDate: Date;
-  public value: Dinamicas;
-  public showPrompt: boolean;
-  public placeholder: string;
-  public title: string;
-  public okText: string;
-  public cancelText: string;
-  valueEmitted: EventEmitter<IDinamicas> = new EventEmitter<IDinamicas>();
- /* @Input() value: Dinamicas;
+  @Input() value: Dinamicas;
+  @Input() placeholder: string;
   @Input() showPrompt: boolean;
   @Input() title: string;
   @Input() okText: string;
   @Input() cancelText: string;
-  @Output() valueEmitted: EventEmitter<IDinamicas> = new EventEmitter<IDinamicas>();*/
+  @Output() valueEmitted: EventEmitter<IDinamicas> = new EventEmitter<IDinamicas>();
 
   constructor(private fb: FormBuilder, private dinamicaService: DinamicaService) {} // se dejo libre el constructor se paso todo al init
     procesar({ value, valid }: { value: IDinamicas, valid: boolean }) {
