@@ -13,12 +13,12 @@
         <div class="list-item">
           <md-checkbox color="primary" type="checkbox" [(ngModel)]="dinamica.completed">
           </md-checkbox>
-           
-            <span [class.completed]="dinamica.completed">Dinamica # {{dinamica.dinamicaId}}       
-               <md-icon>date_range</md-icon>                 
-               Del {{dinamica.fechaInicio |date: 'dd' : 'UTC'}} Al {{dinamica.fechaFinal | date: 'dd MMM y' : 'UTC'}}&nbsp;&nbsp;&nbsp;             
-               En {{dinamica.lugar}}           
-            </span>         
+
+            <span [class.completed]="dinamica.completed">Dinamica # {{dinamica.dinamicaId}}
+               <md-icon>date_range</md-icon>
+               Del {{dinamica.fechaInicio |date: 'dd' : 'UTC'}} Al {{dinamica.fechaFinal | date: 'dd MMM y' : 'UTC'}}&nbsp;&nbsp;&nbsp;
+               En {{dinamica.lugar}}
+            </span>
 
           <span>
             <button md-mini-fab (click)="remove(index)" color="primary"
@@ -38,7 +38,7 @@
   </md-card-content>
 </md-card>
 
-<app-dinamicas-detalle [title]="titulo"            
+<app-dinamicas-detalle [title]="title"
             [placeholder]="'Escribe el # de dinamica matrimonial'"
             [okText]="okButtonText"
             [value]="fieldValue"
