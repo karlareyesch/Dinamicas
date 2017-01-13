@@ -14,17 +14,44 @@ import { Pareja} from  './shared/pareja';
         <a [routerLink]="['/pareja',  pareja.id ]">{{pareja.nombrePareja}}</a>
       </li>
     </ul>
+     <h2>Paises</h2>
+    <ul>
+        <li>España</li>
+        <li>Mexico</li>
+        <li>Colombia</li>
+    </ul>
   `,
 })
 
 export class ParejasComponent implements OnInit {
 
   parejas: Pareja[];
+  public posts;
 
-  constructor(private parejasService: ParejaService) {}
+  // constructor(private parejasService: ParejaService) {}
+  constructor(private parejasService: ParejaService) {
+    this.parejasService.getPosts()
+      .subscribe(
+       result => {
+         this.posts = result;
+         console.log(this.posts);
+       },
+        /*error => {
+         this.errorMessage = <any>error;
+         if(this.errorMessage !== null){
+            console.log(this.errorMessage);
+            alert("Error en la petición");
+         }
+       }*/
+  );
+  }
 
   ngOnInit() {
     this.parejas = this.parejasService.getParejas();
     console.log(this.parejas);
   }
+
+  // Llamamos al método del servicio
+
+
 }
