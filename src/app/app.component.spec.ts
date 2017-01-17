@@ -1,54 +1,34 @@
 /* tslint:disable:no-unused-variable */
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
-import { DebugElement } from '@angular/core';
 
-import { By } from '@angular/platform-browser';
-import {NO_ERRORS_SCHEMA} from '@angular/core';
-import { Component } from '@angular/core';
-import { AppComponent } from './app.component'; /*
-import { RouterLinkStubDirective }   from '../testing';
-import { RouterOutletStubComponent } from '../testing';
+import { TestBed, async } from '@angular/core/testing';
+import { AppComponent } from './app.component';
 
-Component({selector: 'app-root', template: ''})
-  class WelcomeStubComponent {}
-
-
-let comp:    AppComponent;
-let fixture: ComponentFixture<AppComponent>;
-
-
-describe('AppComponent & TestModule', () => {
-  beforeEach( async(() => {
+describe('AppComponent', () => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent,
-        WelcomeStubComponent,
-        RouterLinkStubDirective, RouterOutletStubComponent
-      ]
-    })
-
-    .compileComponents()
-    .then(() => {
-      fixture = TestBed.createComponent(AppComponent);
-      comp    = fixture.componentInstance;
+        AppComponent
+      ],
     });
+    TestBed.compileComponents();
+  });
+
+  it('should create the app', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
   }));
-  tests();
+
+  it(`should have as title 'app works!'`, async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.title).toEqual('app works!');
+  }));
+
+  it('should render title in a h1 tag', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('app works!');
+  }));
 });
-
-//////// Testing w/ NO_ERRORS_SCHEMA //////
-describe('AppComponent & NO_ERRORS_SCHEMA', () => {
-  beforeEach( async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AppComponent, RouterLinkStubDirective ],
-      schemas:      [ NO_ERRORS_SCHEMA ]
-    })
-
-    .compileComponents()
-    .then(() => {
-      fixture = TestBed.createComponent(AppComponent);
-      comp    = fixture.componentInstance;
-    });
-  }));
-  tests();
-});*/
