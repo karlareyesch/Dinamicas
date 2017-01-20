@@ -8,7 +8,7 @@ import { ParejaService } from '../shared/pareja.service';
 describe('Component:ParejasDetalle', () => {
 let activateRoute: ActivatedRoute;
 let parejaService: ParejaService;
-  it('should create an instance', () => {
+  it('Debe crear la instancia', () => {
     let component = new ParejasDetalleComponent(parejaService, activateRoute);
     expect(component).toBeTruthy();
   });

@@ -30,28 +30,17 @@ export class ParejasComponent implements OnInit {
 
   // constructor(private parejasService: ParejaService) {}
   constructor(private parejasService: ParejaService) {
-    this.parejasService.getPosts()
+/*    this.parejasService.getPosts()
       .subscribe(
        result => {
          this.posts = result;
          console.log(this.posts);
        },
-        /*error => {
-         this.errorMessage = <any>error;
-         if(this.errorMessage !== null){
-            console.log(this.errorMessage);
-            alert("Error en la petición");
-         }
-       }*/
-  );
+  );*/
   }
 
   ngOnInit() {
     this.parejas = this.parejasService.getParejas();
     console.log(this.parejas);
   }
-
-  // Llamamos al método del servicio
-
-
 }

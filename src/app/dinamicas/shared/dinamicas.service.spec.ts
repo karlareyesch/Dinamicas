@@ -29,8 +29,8 @@ describe('DinamicaService Tests', () => {
         expect(service.getDinamicas).toBeDefined();
     });
 
-    it('Debe regresar una dinamica especifica', function () {
-        expect(service.getDinamica('1')).toEqual(service.dinamica);
+    it('Debe regresar una sola dinamica', function () {
+        expect(service.getDinamica()).toEqual(service.dinamica);
         console.log(service.dinamica);
     });
 

@@ -6,7 +6,7 @@ import { DinamicaService} from './shared/dinamicas.service';
 
 describe('Component: Dinamicas', () => {
   let ds: DinamicaService;
-  it('should create an instance', () => {
+  it('Debe crear la instancia', () => {
     let component = new DinamicasComponent(ds);
     expect(component).toBeTruthy();
   });

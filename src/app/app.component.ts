@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {} from '@angular/router'
 
 @Component({
@@ -7,19 +7,23 @@ import {} from '@angular/router'
   styleUrls: ['..//assets/stylesheets/styles.css',
               './app.component.css']
 })
-export class AppComponent {
-  
-   openSideNave(mysidenav) {     
-      mysidenav.toggle();   
+export class AppComponent implements OnInit{
+   views : Object[];
+
+   openSideNave(mysidenav) {
+      mysidenav.toggle();
     }
 
-    views: Object[] = [
+   constructor (){}
+
+   ngOnInit () {
+
+   this.views= [
     {
       apartado: "Home",
       descripcion:"/home",
       icono:"home"
-    } , 
-     
+    },
     {
       apartado: "Dinamicas",
       descripcion:'/dinamicas',
@@ -45,5 +49,6 @@ export class AppComponent {
       descripcion: '/configuracion',
       icono: "settings"
     },
-   ]; 
+   ];
+   }
 }

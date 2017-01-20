@@ -48,7 +48,11 @@ export class ParejaService {
     return this.parejas;
   }
 
-  getPareja(id) {
+  getPareja(){
+    return this.pareja;
+  }
+
+  getParejaId(id) {
     return this.parejas.find(pareja => pareja.id = id);
   }
 

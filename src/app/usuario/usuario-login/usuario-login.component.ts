@@ -19,20 +19,16 @@ export class UsuarioLoginComponent implements OnInit {
     loading = false;
     error = '';
 
-    constructor(
-            private router: Router,
-            private authenticationService: AuthenticationService,
-            lf: FormBuilder) {
-        this.loginForm = lf.group({
-            username: ['', Validators.required],
-            password: ['', Validators.required]
-        });
-}
-
+    constructor( private router: Router, private authenticationService: AuthenticationService,
+                 private lf: FormBuilder) {}
 
     ngOnInit() {
         // reset login status
         this.authenticationService.logout();
+         this.loginForm = this.lf.group({
+            username: ['', Validators.required],
+            password: ['', Validators.required]
+        });
     }
 
     login() {
