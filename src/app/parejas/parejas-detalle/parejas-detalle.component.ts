@@ -14,6 +14,6 @@ export class ParejasDetalleComponent implements OnInit {
   constructor(private parejaService: ParejaService, private route: ActivatedRoute) {}
   ngOnInit() {
   console.log(this.route.snapshot.params);
-    this.pareja = this.parejaService.getPareja(this.route.snapshot.params['id']);
+    this.pareja = this.parejaService.getParejaId(this.route.snapshot.params['id']);
   }
 }

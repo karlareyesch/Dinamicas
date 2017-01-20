@@ -29,7 +29,7 @@ export class DinamicaService implements OnInit {
            lugar: 'Iglesia San Martin de Porres' },
          { id: 5, dinamicaId: 45, fechaInicio: new Date('September 9, 2016 08:13:00'), fechaFinal: new Date('September 13, 2016 10:13:00'),
            lugar: 'Iglesia San Judas' },
-         { id: 6, dinamicaId: 46, fechaInicio: new Date('2016/10/26'), fechaFinal: new Date('2016/10/30'),
+         { id: 6, dinamicaId: 46, fechaInicio: new Date('2016/10/26'), fechaFinal: new Date('2016-10-30'),
            lugar: 'Iglesia Sagrada Familia'},
         ];
 
@@ -44,8 +44,12 @@ export class DinamicaService implements OnInit {
         return this.dinamicas;
     }
 
-    getDinamica(id) {
+    getDinamicaId(id) {
         return this.dinamicas.find(dinamica => dinamica.id === id);
+    }
+
+    getDinamica() {
+       return this.dinamica;
     }
 /*
     getDinamicasApi(): Observable<Dinamicas[]> {

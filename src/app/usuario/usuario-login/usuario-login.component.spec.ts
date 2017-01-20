@@ -7,12 +7,12 @@ import { AuthenticationService} from '../../shared/authentication.service';
 
 
 describe('Component: UsuarioLoginComponent', () => {
-let fb: FormBuilder;
+let lf: FormBuilder;
 let router: Router;
 let authenticationService: AuthenticationService;
 
-  it('should create an instance', () => {
-    let component = new UsuarioLoginComponent(router, authenticationService, fb);
+  it('Debe crear la instancia', () => {
+    let component = new UsuarioLoginComponent(router, authenticationService, lf);
     expect(component).toBeTruthy();
   });
 });

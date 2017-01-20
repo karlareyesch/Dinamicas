@@ -28,7 +28,7 @@
         <md-card-actions class="center">
           <button md-button (click)="cancelar(null)" color="primary">{{cancelText}}</button>
           <button md-raised-button type="submit" color="primary">{{okText}}</button>
-       
+
         </md-card-actions>
       </form>
    </md-card-content>
@@ -47,19 +47,19 @@
     <md-card-content>
       <br><br><br>
       <md-input class="demo-full-width" placeholder="ID"
-                [(ngModel)]="value.id" id="id"           
-                (keyup.escape)="emitValue(null)"></md-input>   &nbsp;&nbsp;             
+                [(ngModel)]="value.id" id="id"
+                (keyup.escape)="emitValue(null)"></md-input>   &nbsp;&nbsp;
 
       <md-input class="demo-full-width" [placeholder]="placeholder"
-                [(ngModel)]="value.dinamicaId"  #dinamicas        
-                (keyup.escape)="emitValue(null)"></md-input>                          
-    
+                [(ngModel)]="value.dinamicaId"  #dinamicas
+                (keyup.escape)="emitValue(null)"></md-input>
+
       <p>
-        <md-input type="date" class="demo-full-width" placeholder="Fecha Inicial" [(ngModel)]= "value.fechaInicio" >
-        </md-input>&nbsp;&nbsp;      
+        <md-input type="datetime" class="demo-full-width" placeholder="Fecha Inicial" [(ngModel)]= "value.fechaInicio" >
+        </md-input>&nbsp;&nbsp;
          <md-input type="date" class="demo-full-width" placeholder="Fecha Final"   [(ngModel)]="value.fechaFinal">
         </md-input>
-      </p> 
+      </p>
 
        <table style="width: 100%" cellspacing="0">
           <tr>
@@ -68,7 +68,7 @@
             </td>
           </tr>
          </table>
- 
+
     </md-card-content>
 
 
